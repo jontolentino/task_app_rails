@@ -4,6 +4,12 @@ class CategoriesController < ApplicationController
     end
 
     def show
-        @categories = Category.where({slug: params[:slug]})
+        # @show_category = Category.where({slug: params[:slug]})
+        # puts params[:show_category][:slug]
+        if params[:slug] == "all"
+            redirect_to root_path
+        else
+            @show_category = Category.where({slug: params[:slug]})
+        end
     end
 end
