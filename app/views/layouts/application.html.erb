@@ -11,6 +11,17 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container">
+    <div class="left-container">
+    <h1>GogoTask</h1>
+    <% @categories.each do |categories| %>
+        <p><%= link_to categories.name, categories_show_path(categories.slug)%></p>
+    <% end %>
+    </div>
+    <div class="right-container">
+      <%= yield %>
+    </div>
+</div>
+    
   </body>
 </html>
