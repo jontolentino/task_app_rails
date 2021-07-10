@@ -9,7 +9,8 @@ class CategoriesController < ApplicationController
         if params[:slug] == "all"
             redirect_to root_path
         else
-            @show_category = Category.where({slug: params[:slug]})
+            @show_category = Category.find_by({slug: params[:slug]})
+            # byebug
         end
     end
 end

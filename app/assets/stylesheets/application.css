@@ -34,7 +34,8 @@ a{
 }
 
 .right-container{
-    background-color: #6a81d6;
+    background-color: #9146ff;
+    padding: 10px 50px;
 }
 
 .left-container h1{
@@ -46,6 +47,20 @@ a{
 }
 
 .left-container p:hover{
+    background-color: #ffffff;
+}
+
+.right-container h2{
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.task-item{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-bottom: 3px;
     background-color: #ffffff;
 }
 

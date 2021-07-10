@@ -1,12 +1,13 @@
 
+<h2><%= @show_category.name %></h2>
 
 
-
-    <h2>Show view</h2>
-
-    <% @show_category.each do |categories| %>
-        <p><%= categories.slug %></p>
-    <% end %>
+<% @show_category.tasks.each do |task| %>
+<div class="task-item">
+    <p><%= task.name %></p>
+</div>
+<% end %>
+    
 
 
 
