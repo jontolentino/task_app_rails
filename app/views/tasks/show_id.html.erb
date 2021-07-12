@@ -1,5 +1,5 @@
-<h2>Task</h2>
-<%# <br> %>
+<h2>Task from <%= link_to @task.category[:name], categories_show_path(@task.category[:slug]) %></h2>
+
 <div class="task-item task-show-look">
     <p>Title:</p>
     <h3><%= @task.name %></h3>
@@ -9,6 +9,27 @@
     <p>Content:</p>
     <h3><%= @task.content %></h3>
 </div>
+
+<button onclick="show_edit_form()" id="edit_task_button">Edit</button> <button id="delete_task_button">Delete</button>
+
+<div id="show_id_form_tasks_edit">
+    <h1>SHOW TASK</h1>
+</div>
+
+
+<script>
+ function show_edit_form(){
+     console.log("show edit form")
+     form = document.getElementById("show_id_form_tasks_edit")
+     form.style.display = "block";
+    //  if (form.style.display === "none"){
+    //     form.style.display = "block";
+    //     return
+    //     } else {
+    //     form.style.display = "none";
+    //     }
+ }
+</script>
 
     
 

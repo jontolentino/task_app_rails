@@ -72,3 +72,20 @@ a{
     background-color: #ffffff;
 }
 
+#show_id_form_tasks_edit{
+    display: none;
+    /* margin-top: 20px; */
+}
+
+#edit_task_button, #delete_task_button{
+    margin-top: 7px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    border-bottom: 2px solid #181818;
+}
+#edit_task_button:hover, #delete_task_button:hover{
+    background-color: #dfdfdf;
+    border-bottom: 2px solid #9146ff;
+}
