@@ -13,4 +13,12 @@ class CategoriesController < ApplicationController
             # byebug
         end
     end
+
+    def show_id
+        # @show_category = Category.find_by({slug: params[:slug]})
+        # @task = Category.find_by({slug: params[:slug]})
+
+        # puts params[:slug]
+        # puts params[:id]
+    end
 end

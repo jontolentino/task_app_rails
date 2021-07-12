@@ -30,34 +30,34 @@ categories = Category.create([
 tasks = Task.create([
     {
         name: "Math algebra assignment",
-        category: categories.second
+        category: 2
     },
     {
         name: "Math exercise at page 12",
-        category: categories.second
+        category: 2
     },
     {
         name: "Buy carrots 12 pieces",
-        category: categories.second
+        category: 6
     },
     {
         name: "Buy 1/2 kilo brown sugar",
-        category: categories.second
+        category: 6
     },
     {
         name: "add candy to grocery jar",
-        category: categories.second
+        category: 6
     },
     {
         name: "ruby journal project",
-        category: categories.second
+        category: 4
     },
     {
         name: "deploy rails to heroku",
-        category: categories.second
+        category: 4
     },
     {
         name: "add users to task app",
-        category: categories.second
+        category: 4
     }
 ])

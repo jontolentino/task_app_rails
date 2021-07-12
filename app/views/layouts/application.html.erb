@@ -15,8 +15,11 @@
     <div class="left-container">
     <h1>GogoTask</h1>
     <% @categories.each do |categories| %>
-        <p><%= link_to categories.name, categories_show_path(categories.slug)%></p>
+      <%= link_to categories_show_path(categories.slug) do %>
+          <p><%= categories.name %></p>
+      <% end %>
     <% end %>
+
     </div>
     <div class="right-container">
       <%= yield %>

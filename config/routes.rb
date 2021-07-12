@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # end
 
   get '/categories' => 'categories#index', as: 'categories_index'
-  # get '/all' => 'categories#index', as: 'categories_index_all'
   get '/:slug' => 'categories#show', as: 'categories_show'
+  get '/:slug/:id' => 'task#show_id', as: 'task_show_id'
 
 end
