@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/:slug' => 'categories#show', as: 'categories_show'
   get '/:slug/:id' => 'tasks#show_id', as: 'tasks_show_id'
   # get '/:slug/:id' => 'categories#show_id', as: 'categories_show_id'
-  patch '/task/edit' => 'tasks#update', as: 'task_updating'
+  patch '/:slug/:id' => 'tasks#update', as: 'task_updating'
 
 
 end

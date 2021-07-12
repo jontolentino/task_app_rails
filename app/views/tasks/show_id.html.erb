@@ -13,9 +13,9 @@
 <button onclick="show_edit_form()" id="edit_task_button">Edit</button> <button id="delete_task_button">Delete</button>
 
 <div id="show_id_form_tasks_edit" class="task-item">
-    <%= form_with model: @task, scope: :task, url: task_updating_path, method: :patch, local: true do |form| %>
+    <%= form_with model: @task, url: task_updating_path(@task.category[:slug], @task.id), method: :patch do |form| %>
         <%= form.label :name, "Title", class: "form-label-new" %><br>
-        <%= form.text_field :name %><br>
+        <%= form.text_field :name %><br>     
 
         <%= form.label :content, "Content", class: "form-label-new" %><br>
         <%= form.text_area :content, rows: 3 %><br>

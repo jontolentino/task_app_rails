@@ -1,14 +1,24 @@
 class TasksController < ApplicationController
-    
+    before_action :set_post,
+
     def show_id
-        # @show_category = Category.find_by({slug: params[:slug]})
-        # @task = Category.find_by({slug: params[:slug]})
-
-        # puts params[:slug]
-        # puts params[:id]
-
-        @category = Category.find_by(slug: params[:slug])
+        # @category = Category.find_by(slug: params[:slug])
         @task = @category.tasks.find_by(id: params[:id])
-        
+    end
+
+    def update
+        @task = @category.tasks.find_by(id: params[:id])
+        @task.update(post_params)
+        redirect_to tasks_show_id_path(params[:slug], params[:id])
+    end
+
+    private
+    
+    def set_post
+        @category = Category.find_by(slug: params[:slug])
+    end 
+
+    def post_params
+        params.require(:task).permit(:name, :content)
     end
 end
