@@ -1,15 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 categories = Category.create([
-    {
-        name: "All"
-    },
     {
         name: "School"
     },
@@ -30,34 +19,42 @@ categories = Category.create([
 tasks = Task.create([
     {
         name: "Math algebra assignment",
-        category: categories.second
+        category: categories.second,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     },
     {
         name: "Math exercise at page 12",
-        category: categories.third
+        category: categories.third,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     },
     {
         name: "Buy carrots 12 pieces",
-        category: categories.fourth
+        category: categories.fourth,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     },
     {
         name: "Buy 1/2 kilo brown sugar",
-        category: categories.second
+        category: categories.second,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     },
     {
         name: "add candy to grocery jar",
-        category: categories.second
+        category: categories.first,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     },
     {
         name: "ruby journal project",
-        category: categories.second
+        category: categories.first,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     },
     {
         name: "deploy rails to heroku",
-        category: categories.third
+        category: categories.third,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     },
     {
         name: "add users to task app",
-        category: categories.second
+        category: categories.second,
+        content: "Can it handle a million in one go is this the best we can do. You might wanna give it another shot could you move it a tad to the left will royalties in the company do instead of cash or can we try some other colours maybe"
     }
 ])

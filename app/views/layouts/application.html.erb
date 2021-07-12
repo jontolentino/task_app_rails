@@ -14,7 +14,7 @@
   <div class="container">
     <div class="left-container">
     <h1>GogoTask</h1>
-    <p>All</p>
+    <p><%= link_to "All", pages_index_path %></p>
     <% @categories.each do |categories| %>
       <%= link_to categories_show_path(categories.slug) do %>
           <p><%= categories.name %></p>
