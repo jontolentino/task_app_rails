@@ -12,8 +12,16 @@
 
 <button onclick="show_edit_form()" id="edit_task_button">Edit</button> <button id="delete_task_button">Delete</button>
 
-<div id="show_id_form_tasks_edit">
-    <h1>SHOW TASK</h1>
+<div id="show_id_form_tasks_edit" class="task-item">
+    <%= form_with model: @task, scope: :task, url: task_updating_path, method: :patch, local: true do |form| %>
+        <%= form.label :name, "Title", class: "form-label-new" %><br>
+        <%= form.text_field :name %><br>
+
+        <%= form.label :content, "Content", class: "form-label-new" %><br>
+        <%= form.text_area :content, rows: 3 %><br>
+
+        <%= form.submit "Update Post", id: "form-create-new" %>     
+        <% end %>
 </div>
 
 
@@ -22,13 +30,7 @@
      console.log("show edit form")
      form = document.getElementById("show_id_form_tasks_edit")
      form.style.display = "block";
-    //  if (form.style.display === "none"){
-    //     form.style.display = "block";
-    //     return
-    //     } else {
-    //     form.style.display = "none";
-    //     }
- }
+    }
 </script>
 
     

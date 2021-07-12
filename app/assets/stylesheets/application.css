@@ -77,6 +77,15 @@ a{
     /* margin-top: 20px; */
 }
 
+#show_id_form_tasks_edit{
+    margin-top: 10px;
+}
+
+#show_id_form_tasks_edit:hover{
+    background-color: #ffffff;
+    /* margin-top: 20px; */
+}
+
 #edit_task_button, #delete_task_button{
     margin-top: 7px;
     padding: 10px 30px;
@@ -88,4 +97,12 @@ a{
 #edit_task_button:hover, #delete_task_button:hover{
     background-color: #dfdfdf;
     border-bottom: 2px solid #9146ff;
+}
+
+#show_id_form_tasks_edit input, #show_id_form_tasks_edit textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 5px;
 }
