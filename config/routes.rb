@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/categories' => 'categories#index', as: 'categories_index'
   get '/:slug' => 'categories#show', as: 'categories_show'
-  get '/:slug/:id' => 'task#show_id', as: 'task_show_id'
+  get '/:slug/:id' => 'tasks#show_id', as: 'tasks_show_id'
+  # get '/:slug/:id' => 'categories#show_id', as: 'categories_show_id'
+
 
 end

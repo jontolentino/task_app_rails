@@ -1,13 +1,12 @@
-
 <h2><%= @show_category.name %></h2>
 
-
 <% @show_category.tasks.each do |task| %>
-<div class="task-item">
-    <p><%= task.name %></p>
-</div>
+        <%= link_to tasks_show_id_path(id: task.id) do %>
+        <div class="task-item">
+            <p><%= task.name %></p>
+        </div>    
+        <% end %>
 <% end %>
     
-
 
 
