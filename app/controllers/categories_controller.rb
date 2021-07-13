@@ -10,4 +10,10 @@ class CategoriesController < ApplicationController
             @show_category = Category.find_by({slug: params[:slug]})
         # end
     end
+
+    # def new
+    #     @category = Category.new
+    # end
+
+
 end

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   # get '/:slug/:id' => 'categories#show_id', as: 'categories_show_id'
   patch '/:slug/:id' => 'tasks#update', as: 'task_updating'
   delete '/:slug/:id' => 'tasks#delete', as: 'task_deleting'
+  post '/categories/new' => 'pages#new', as: 'category_new'
+  delete '/:slug' => 'pages#delete', as: 'category_deleting'
 
 
 

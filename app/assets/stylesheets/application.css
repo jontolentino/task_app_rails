@@ -106,3 +106,39 @@ a{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 5px;
 }
+
+.create-category-div{
+    padding: 10px 20px;
+}
+
+.create-category-div form{
+    display: flex;
+    flex-direction: row;
+}
+
+.category-name-input{
+    width: 70%;
+    padding: 5px;
+    margin-right: 2px;
+}
+.category-create-new{
+    width: 30%;
+    padding: 5px;
+}
+
+.left-container p{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#delete-category-span{
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#delete-category-span:hover{
+    background-color: #d1d1d1;
+}
+

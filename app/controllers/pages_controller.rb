@@ -1,5 +1,30 @@
 class PagesController < ApplicationController
     def index
         @categories = Category.all
+        @category = Category.new
     end
+
+    def new
+        @category = Category.new(category_params)
+        
+        if @category.save
+            # debugger
+            redirect_to "/#{@category.slug}"
+        else
+            redirect_to root_path
+        end
+    end
+
+    def delete
+        @category = Category.find_by!(slug: params[:slug])
+        @category.destroy
+        redirect_to pages_index_path
+    end
+
+    private
+
+    def category_params
+        params.require(:category).permit(:name)
+    end
+
 end

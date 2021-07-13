@@ -17,10 +17,19 @@
     <p><%= link_to "All", pages_index_path %></p>
     <% @categories.each do |categories| %>
       <%= link_to categories_show_path(categories.slug) do %>
-          <p><%= categories.name %></p>
+            <p><%= categories.name %>
+            <%= link_to category_deleting_path(categories.slug), method: :delete, data: {confirm: "Delete this category?"} do %>
+            <span id="delete-category-span">Delete</span>
+            <% end %>
+            </p>
       <% end %>
     <% end %>
-
+    <div class="create-category-div">
+      <%= form_with model: @category,scope: :category, url: category_new_path, method: :post, local: true do |form| %>
+        <%= form.text_field :name, class: "category-name-input", placeholder: "New Category" %><br>
+        <%= form.submit "Submit", class: "category-create-new"%>  
+      <% end %>   
+    </div>
     </div>
     <div class="right-container">
       <%= yield %>
