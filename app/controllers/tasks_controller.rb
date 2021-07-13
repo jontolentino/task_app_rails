@@ -18,6 +18,18 @@ class TasksController < ApplicationController
         redirect_to categories_show_path(params[:slug])
     end
 
+    def create_new
+        @task = @category.tasks.build(post_params)
+        # byebug
+        if @task.save
+            # redirect_to question_index_path
+
+            redirect_to pages_index_path
+        else
+            redirect_to pages_index_path
+        end
+    end
+
     private
     
     def set_post
@@ -25,6 +37,6 @@ class TasksController < ApplicationController
     end 
 
     def post_params
-        params.require(:task).permit(:name, :content)
+        params.require(:tasks).permit(:name, :content)
     end
 end

@@ -8,6 +8,8 @@ class CategoriesController < ApplicationController
         #     redirect_to root_path
         # else
             @show_category = Category.find_by({slug: params[:slug]})
+            # @taskes = @show_category.tasks.build
+            # @show_category_new = Category.new
         # end
     end
 

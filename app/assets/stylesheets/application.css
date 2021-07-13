@@ -142,3 +142,12 @@ a{
     background-color: #d1d1d1;
 }
 
+.task-item-form{
+    background-color: #505050;
+    color: #ffffff;
+}
+
+.task-item-form:hover{
+    background-color: #505050
+}
+

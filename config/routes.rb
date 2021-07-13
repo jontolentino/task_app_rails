@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   delete '/:slug/:id' => 'tasks#delete', as: 'task_deleting'
   post '/categories/new' => 'pages#new', as: 'category_new'
   delete '/:slug' => 'pages#delete', as: 'category_deleting'
-
-
+  post '/:slug' => 'tasks#create_new', as: 'task_creating'
 
 end

@@ -1,5 +1,12 @@
 <h2><%= @show_category.name %></h2>
-
+        <div class="task-item task-item-form">
+            <p>Create new task</p>  
+                <%= form_with model: [@show_category, @show_category.tasks],scope: "tasks", url: task_creating_path, method: :post, local: true do |form| %>
+                    <%= form.text_field :name, class: "tasks-name-input", placeholder: "New Task Name" %><br>
+                    <%= form.text_field :content, class: "tasks-name-input", placeholder: "New Task Content" %><br>
+                    <%= form.submit "Submit", class: "tasks-create-new"%>  
+                <% end %>   
+        </div> 
 <% @show_category.tasks.each do |task| %>
         <%= link_to tasks_show_id_path(id: task.id) do %>
         <div class="task-item">
