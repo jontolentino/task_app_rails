@@ -12,6 +12,12 @@ class TasksController < ApplicationController
         redirect_to tasks_show_id_path(params[:slug], params[:id])
     end
 
+    def delete
+        @task = @category.tasks.find_by(id: params[:id])
+        @task.destroy
+        redirect_to categories_show_path(params[:slug])
+    end
+
     private
     
     def set_post
