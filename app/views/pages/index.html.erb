@@ -1,23 +1,37 @@
-<% if notice %>
-    <p class="notice"><%= notice %></p>
-<% end %>
-<% if notice %>
-    <p class="alert"><%= alert %></p>
-<% end %>
+    <div class="container-all">
+    <% if notice %>
+        <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if notice %>
+            <p class="alert"><%= alert %></p>
+        <% end %>
 
-<h2>All</h2>
-
-
-
-<% @categories.each do |category| %>
-    <p class="task-category-all-page"><%= category.name %></p>
-
-    <% category.tasks.each do |task| %>
-        <p class="task-item"><%= task.name %></p>
-    <% end %>
+        <h2 id="titlersH2">All</h2>
 
 
-<% end %>
+
+        <% @categories.each do |category| %>
+            <p class="task-category-all-page"><%= category.name %></p>
+
+            <% category.tasks.each do |task| %>
+                <p class="task-item"><%= task.name %></p>
+            <% end %>
+
+        
+        <% end %>
+    </div>
+
+
+
+
+
+
+    
+
+
+
+
+
 
 
 

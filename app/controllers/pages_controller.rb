@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+    before_action :authenticate_user!
+
     def index
         @categories = Category.all
         @category = Category.new
@@ -19,6 +21,9 @@ class PagesController < ApplicationController
         @category = Category.find_by!(slug: params[:slug])
         @category.destroy
         redirect_to pages_index_path
+    end
+
+    def signup
     end
 
     private

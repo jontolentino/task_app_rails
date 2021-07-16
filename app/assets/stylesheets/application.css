@@ -145,6 +145,7 @@ a{
 .task-item-form{
     background-color: #505050;
     color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .task-item-form:hover{
@@ -155,6 +156,8 @@ a{
     padding: 5px;
     width: 100%;
     margin-bottom: 3px;
+    border-radius: 3px;
+    border: none;
 }
 
 .tasks-create-new{
@@ -167,8 +170,15 @@ a{
     border-radius: 3px;
     text-align: center;
     background-color: #505050;
-    width: 100px;
+    width: 120px;
     color: #ffffff;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.container-all{
+    min-width: 100%;
+    min-height: 100%;
 }
 

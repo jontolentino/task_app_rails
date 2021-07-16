@@ -18,4 +18,13 @@ Rails.application.routes.draw do
   delete '/:slug' => 'pages#delete', as: 'category_deleting'
   post '/:slug' => 'tasks#create_new', as: 'task_creating'
 
-end
+  # TEST
+  get '/pages/sign_up' => 'pages#signup', as: 'pages_new_user_registration'
+  # users
+  # devise_for :users
+  
+
+  # new_user_registration GET    /users/sign_up(.:format)   devise/registrations#new
+  # get '/users/sign_up/' => 'devise/registration#new', as: 'new_user_registrations'
+end 
+ 
