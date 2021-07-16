@@ -1,4 +1,13 @@
+<% if notice %>
+    <p class="notice"><%= notice %></p>
+<% end %>
+<% if notice %>
+    <p class="alert"><%= alert %></p>
+<% end %>
+
 <h2>All</h2>
+
+
 
 <% @categories.each do |category| %>
     <p class="task-category-all-page"><%= category.name %></p>
