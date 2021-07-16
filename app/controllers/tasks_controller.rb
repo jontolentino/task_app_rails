@@ -24,9 +24,9 @@ class TasksController < ApplicationController
         if @task.save
             # redirect_to question_index_path
 
-            redirect_to pages_index_path
+            redirect_to categories_show_path
         else
-            redirect_to pages_index_path
+            redirect_to categories_show_path
         end
     end
 
@@ -37,6 +37,6 @@ class TasksController < ApplicationController
     end 
 
     def post_params
-        params.require(:tasks).permit(:name, :content)
+        params.require(:task).permit(:name, :content)
     end
 end
