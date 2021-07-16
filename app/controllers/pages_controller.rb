@@ -2,7 +2,7 @@ class PagesController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @categories = Category.all
+        @categories = current_user.categories.all
         @category = Category.new
     end
 

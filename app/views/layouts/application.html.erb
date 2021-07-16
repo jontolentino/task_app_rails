@@ -43,6 +43,7 @@
         
       </div>
           <span><%= current_user.email %></span>
+          <span><%= current_user.id %></span>
           <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
         <% end %>
       </div>
