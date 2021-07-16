@@ -151,3 +151,14 @@ a{
     background-color: #505050
 }
 
+.tasks-name-input{
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.tasks-create-new{
+    padding: 5px 10px;
+    
+}
+

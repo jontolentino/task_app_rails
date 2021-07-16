@@ -2,8 +2,8 @@
         <div class="task-item task-item-form">
             <p>Create new task</p>  
                 <%= form_with model: [@show_category, @show_category.tasks],scope: "task", url: task_creating_path, method: :post, local: true do |form| %>
-                    <%= form.text_field :name, class: "tasks-name-input", placeholder: "New Task Name", value: "" %><br>
-                    <%= form.text_field :content, class: "tasks-name-input", placeholder: "New Task Content" %><br>
+                    <%= form.text_field :name, class: "tasks-name-input", placeholder: "Name", value: "" %><br>
+                    <%= form.text_field :content, class: "tasks-name-input", placeholder: "Content" %><br>
                     <%= form.submit "Submit", class: "tasks-create-new"%>  
                 <% end %>   
         </div> 
