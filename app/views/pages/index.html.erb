@@ -1,5 +1,15 @@
 <h2>All</h2>
 
-    
+<% @categories.each do |category| %>
+    <p class="task-category-all-page"><%= category.name %></p>
+
+    <% category.tasks.each do |task| %>
+        <p class="task-item"><%= task.name %></p>
+    <% end %>
+
+
+<% end %>
+
+
 
 

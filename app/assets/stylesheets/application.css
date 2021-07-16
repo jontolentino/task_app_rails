@@ -159,6 +159,16 @@ a{
 
 .tasks-create-new{
     padding: 5px 10px;
-    
+
+}
+
+.task-category-all-page{
+    padding: 5px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #505050;
+    width: 100px;
+    color: #ffffff;
+    margin-bottom: 3px;
 }
 
