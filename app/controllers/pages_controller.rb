@@ -7,8 +7,8 @@ class PagesController < ApplicationController
     end
 
     def new
-        @category = Category.new(category_params)
-        
+        # @category = Category.new(category_params)
+        @category = current_user.categories.build(category_params)
         if @category.save
             # debugger
             redirect_to "/#{@category.slug}"
