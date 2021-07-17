@@ -34,7 +34,7 @@ class TasksController < ApplicationController
     private
     # adding current user
     def set_post
-        @category = Category.find_by(slug: params[:slug])
+        @category = current_user.categories.find_by(slug: params[:slug])
     end 
 
     def post_params

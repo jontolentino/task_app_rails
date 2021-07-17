@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     end
 
     def delete
-        @category = Category.find_by!(slug: params[:slug])
+        @category = current_user.categories.find_by!(slug: params[:slug])
         @category.destroy
         redirect_to pages_index_path
     end
