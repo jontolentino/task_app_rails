@@ -8,9 +8,18 @@ class CategoryTest < ActiveSupport::TestCase
   #   cat = Category.create(:name "")
   #   assert true
   # end
+  # setup do 
+  #   users(:one).password = "123"
+  # end
 
-  test "name should not be empty"
-    cat = Category.new(:one)
+  test "name should not be empty" do
+    # cat = Category.new
+    # assert_raises(NoMethodError) do
+    #   cat = Category.new(name: "jon")
+    #   cat.save
+    # end
+    cat = Category.new(name: "")
     assert cat.save
   end
+
 end
