@@ -182,3 +182,6 @@ a{
     min-height: 100%;
 }
 
+#logout-div-p:hover{
+    background-color: #ff8080;
+}
