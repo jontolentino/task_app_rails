@@ -18,7 +18,8 @@ class CategoryTest < ActiveSupport::TestCase
     #   cat = Category.new(name: "jon")
     #   cat.save
     # end
-    cat = Category.new(name: "")
+    @user = User.first
+    cat = @user.categories.create(name: "jon")
     assert cat.save
   end
 
