@@ -12,7 +12,7 @@ class CategoryTest < ActiveSupport::TestCase
   #   users(:one).password = "123"
   # end
 
-  test "name should not be empty" do
+  test "category name should not be empty" do
     # cat = Category.new
     # assert_raises(NoMethodError) do
     #   cat = Category.new(name: "jon")

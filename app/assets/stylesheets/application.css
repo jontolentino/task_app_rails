@@ -185,3 +185,7 @@ a{
 #logout-div-p:hover{
     background-color: #ff8080;
 }
+
+.sign-up-form-form input{
+    padding: 5px;
+}
