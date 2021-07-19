@@ -4,6 +4,7 @@ one:
   id: 1
   name: MyString
   category: mystring
+  category_id: 1
 
 # two:
 #   name: MyString

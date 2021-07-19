@@ -80,30 +80,89 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
+    assert_select "p", {:text => "Task Name"}
+    assert_response :success
   end
 
-  test "delete a task" do
+  test "show a task and its content" do
+    # sign_in users(:one)
+    # get "/"
+    # post "/categories/new", params: { category: {
+    #   name: "Test Category"
+    # }}
+    # assert_response :redirect
+    # follow_redirect!
+    # assert_response :success
+
+    # post "/test-category", params: { task: {
+    #   name: "Task Name", content: "Task Content"
+    # }}
+    # assert_response :redirect
+    # follow_redirect!
+    # assert_response :success
+
+    # get "/test-category/1"
+    # assert_select "h3", {:text => "Task Content"}
+    # assert_response :success
     sign_in users(:one)
     get "/"
-    post "/categories/new", params: { category: {
-      name: "Test Category"
-    }}
-    assert_response :redirect
-    follow_redirect!
+    get tasks_show_id_path, params: {slug: categories(:one).slug, id: tasks(:one).id}
     assert_response :success
-
-    post "/test-category", params: { task: {
-      name: "Task Name", content: "Task Content"
-    }}
-    assert_response :redirect
-    follow_redirect!
-    assert_response :success
-
-    delete "/test-category/2"
-    assert_response :redirect
-    follow_redirect!
-    assert_response :success
+    
   end
+
+  # test "delete a task" do
+  #   sign_in users(:one)
+  #   get "/"
+  #   post "/categories/new", params: { category: {
+  #     name: "Test Category"
+  #   }}
+  #   assert_response :redirect
+  #   follow_redirect!
+  #   assert_response :success
+
+  #   post "/test-category", params: { task: {
+  #     name: "Task Name", content: "Task Content"
+  #   }}
+  #   assert_response :redirect
+  #   follow_redirect!
+  #   assert_response :success
+
+  #   # delete task_deleting_path, params: { slug: "test-category", id: "1"}
+  #   delete "/test-category/2"
+  #   assert_response :redirect
+  #   follow_redirect!
+  #   assert_response :success
+  # end
+
+  # test "edit a task" do
+  #   sign_in users(:one)
+  #   get "/"
+  #   post "/categories/new", params: { category: {
+  #     name: "Test Category"
+  #   }}
+  #   assert_response :redirect
+  #   follow_redirect!
+  #   assert_response :success
+
+  #   post "/test-category", params: { task: {
+  #     name: "Task Name", content: "Task Content"
+  #   }}
+  #   assert_response :redirect
+  #   follow_redirect!
+  #   assert_response :success
+
+  # end
+
+
+    # patch "/test-category/2", params: { task: {
+    #   name: "Task Name", content: "Task Content"
+    # }}
+    # assert_response :redirect
+    # follow_redirect!
+    # assert_response :success
+    
+  # end
 
 
   
@@ -118,7 +177,7 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     
     # get destroy_user_session_path
     # assert_select "a", {:text => "Sign up"}
-    # assert_response :success
+
   # end
 
 
