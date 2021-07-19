@@ -3,7 +3,7 @@ require "test_helper"
 class UserLoginedFlowTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   fixtures :users
-
+  # USER RELATED
   test "user sign in" do
     sign_in users(:one)
     get "/"
@@ -19,7 +19,7 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     get "/users/sign_in"
     assert_response :success
   end
-
+  # CATEGORY RELATED
   test "create a category" do
     sign_in users(:one)
     get "/"
@@ -30,6 +30,25 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
   end
+
+  test "delete a category" do
+    sign_in users(:one)
+    get "/"
+    post "/categories/new", params: { category: {
+      name: "Test Category"
+    }}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+    
+    get "/"
+    delete "/test-category"
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+  end
+
+  
 
     # assert_select "h2", {:text => "Log in"}
     # assert_response :success
