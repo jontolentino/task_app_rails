@@ -82,6 +82,29 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "delete a task" do
+    sign_in users(:one)
+    get "/"
+    post "/categories/new", params: { category: {
+      name: "Test Category"
+    }}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+
+    post "/test-category", params: { task: {
+      name: "Task Name", content: "Task Content"
+    }}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+
+    delete "/test-category/2"
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+  end
+
 
   
 
