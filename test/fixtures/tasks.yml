@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  category: one
+  category: mystring
 
-two:
-  name: MyString
-  category: two
+# two:
+#   name: MyString
+#   category: mystring

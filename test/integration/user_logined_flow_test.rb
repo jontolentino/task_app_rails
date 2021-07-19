@@ -19,6 +19,7 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     get "/users/sign_in"
     assert_response :success
   end
+
   # CATEGORY RELATED
   test "create a category" do
     sign_in users(:one)
@@ -40,11 +41,25 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    
+
     get "/"
     delete "/test-category"
     assert_response :redirect
     follow_redirect!
+    assert_response :success
+  end
+
+  test "show a category" do
+    sign_in users(:one)
+    get "/"
+    post "/categories/new", params: { category: {
+      name: "Test Category"
+    }}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+
+    get "/test-category"
     assert_response :success
   end
 
