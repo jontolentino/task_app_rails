@@ -63,6 +63,26 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  # TASK TEST
+  test "create a task" do
+    sign_in users(:one)
+    get "/"
+    post "/categories/new", params: { category: {
+      name: "Test Category"
+    }}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+
+    post "/test-category", params: { task: {
+      name: "Task Name", content: "Task Content"
+    }}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+  end
+
+
   
 
     # assert_select "h2", {:text => "Log in"}
