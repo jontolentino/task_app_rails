@@ -1,10 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
+  # id: 1
   name: MyString
-  category: mystring
-  category_id: 1
+  category: one
+  # category_id: 1
 
 # two:
 #   name: MyString

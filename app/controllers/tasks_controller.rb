@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_post,
+    before_action :set_post
 
     def show_id
         # @category = Category.find_by(slug: params[:slug])
+        # byebug
         @task = @category.tasks.find_by(id: params[:id])
     end
 

@@ -104,9 +104,12 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
     # get "/test-category/1"
     # assert_select "h3", {:text => "Task Content"}
     # assert_response :success
+    
+    # get tasks_show_id_path, params: {slug: categories(:one).slug, id: tasks(:one).id}
     sign_in users(:one)
+    assert_response :success
     get "/"
-    get tasks_show_id_path, params: {slug: categories(:one).slug, id: tasks(:one).id}
+    get tasks_show_id_path(categories(:one).slug, tasks(:one).id)
     assert_response :success
     
   end
