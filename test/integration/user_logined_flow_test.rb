@@ -85,35 +85,33 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
   end
 
   test "show a task and its content" do
-    # sign_in users(:one)
-    # get "/"
-    # post "/categories/new", params: { category: {
-    #   name: "Test Category"
-    # }}
-    # assert_response :redirect
-    # follow_redirect!
-    # assert_response :success
-
-    # post "/test-category", params: { task: {
-    #   name: "Task Name", content: "Task Content"
-    # }}
-    # assert_response :redirect
-    # follow_redirect!
-    # assert_response :success
-
-    # get "/test-category/1"
-    # assert_select "h3", {:text => "Task Content"}
-    # assert_response :success
-    
-    # get tasks_show_id_path, params: {slug: categories(:one).slug, id: tasks(:one).id}
     sign_in users(:one)
-    assert_response :success
     get "/"
     get tasks_show_id_path(categories(:one).slug, tasks(:one).id)
     assert_response :success
-    
   end
 
+  test "delete a task and it's content" do
+    sign_in users(:one)
+    get "/"
+    delete task_deleting_path(categories(:one).slug, tasks(:one).id)
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+  end
+
+  test "edit a task and it's content" do
+    sign_in users(:one)
+    get "/"
+    patch task_updating_path(categories(:one).slug, tasks(:one).id), params: { task: {
+      name: "New Task Name", content: "New Task Content"
+    }}
+    assert_response :redirect
+    follow_redirect!
+    assert_select "h3", {:text => "New Task Name"}
+    assert_response :success
+  end 
+  
   # test "delete a task" do
   #   sign_in users(:one)
   #   get "/"
@@ -262,6 +260,27 @@ class UserLoginedFlowTest < ActionDispatch::IntegrationTest
   
   
   # end
+  # sign_in users(:one)
+    # get "/"
+    # post "/categories/new", params: { category: {
+    #   name: "Test Category"
+    # }}
+    # assert_response :redirect
+    # follow_redirect!
+    # assert_response :success
+
+    # post "/test-category", params: { task: {
+    #   name: "Task Name", content: "Task Content"
+    # }}
+    # assert_response :redirect
+    # follow_redirect!
+    # assert_response :success
+
+    # get "/test-category/1"
+    # assert_select "h3", {:text => "Task Content"}
+    # assert_response :success
+    
+    # get tasks_show_id_path, params: {slug: categories(:one).slug, id: tasks(:one).id}
 
 
 end
